@@ -1,6 +1,6 @@
 ﻿namespace AsistenciaDetalle.UI.Registro
 {
-    partial class RegistroAsistencia
+    partial class rAsistencia
     {
         /// <summary>
         /// Required designer variable.
@@ -35,15 +35,15 @@
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.AsignaaturacomboBox = new System.Windows.Forms.ComboBox();
             this.EstudiantegroupBox = new System.Windows.Forms.GroupBox();
-            this.EstudiantecomboBox = new System.Windows.Forms.ComboBox();
-            this.PresentecheckBox = new System.Windows.Forms.CheckBox();
-            this.AsistenciadataGridView = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
+            this.NuevoEstudianteButton = new System.Windows.Forms.Button();
+            this.AsistenciadataGridView = new System.Windows.Forms.DataGridView();
+            this.PresentecheckBox = new System.Windows.Forms.CheckBox();
+            this.EstudiantecomboBox = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.NuevoEstudianteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AsistenciaIdnumericUpDown)).BeginInit();
             this.EstudiantegroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AsistenciadataGridView)).BeginInit();
@@ -112,14 +112,32 @@
             this.EstudiantegroupBox.TabStop = false;
             this.EstudiantegroupBox.Text = "Estudiantes";
             // 
-            // EstudiantecomboBox
+            // label4
             // 
-            this.EstudiantecomboBox.FormattingEnabled = true;
-            this.EstudiantecomboBox.Location = new System.Drawing.Point(77, 30);
-            this.EstudiantecomboBox.Name = "EstudiantecomboBox";
-            this.EstudiantecomboBox.Size = new System.Drawing.Size(121, 21);
-            this.EstudiantecomboBox.TabIndex = 0;
-            this.EstudiantecomboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Estudiante:";
+            // 
+            // NuevoEstudianteButton
+            // 
+            this.NuevoEstudianteButton.Image = global::AsistenciaDetalle.Properties.Resources.icons8_más_26;
+            this.NuevoEstudianteButton.Location = new System.Drawing.Point(278, 30);
+            this.NuevoEstudianteButton.Name = "NuevoEstudianteButton";
+            this.NuevoEstudianteButton.Size = new System.Drawing.Size(69, 23);
+            this.NuevoEstudianteButton.TabIndex = 3;
+            this.NuevoEstudianteButton.UseVisualStyleBackColor = true;
+            this.NuevoEstudianteButton.Click += new System.EventHandler(this.NuevoEstudianteButton_Click);
+            // 
+            // AsistenciadataGridView
+            // 
+            this.AsistenciadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AsistenciadataGridView.Location = new System.Drawing.Point(6, 59);
+            this.AsistenciadataGridView.Name = "AsistenciadataGridView";
+            this.AsistenciadataGridView.Size = new System.Drawing.Size(341, 122);
+            this.AsistenciadataGridView.TabIndex = 2;
             // 
             // PresentecheckBox
             // 
@@ -131,22 +149,14 @@
             this.PresentecheckBox.Text = "Presente";
             this.PresentecheckBox.UseVisualStyleBackColor = true;
             // 
-            // AsistenciadataGridView
+            // EstudiantecomboBox
             // 
-            this.AsistenciadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AsistenciadataGridView.Location = new System.Drawing.Point(6, 59);
-            this.AsistenciadataGridView.Name = "AsistenciadataGridView";
-            this.AsistenciadataGridView.Size = new System.Drawing.Size(341, 122);
-            this.AsistenciadataGridView.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Estudiante:";
+            this.EstudiantecomboBox.FormattingEnabled = true;
+            this.EstudiantecomboBox.Location = new System.Drawing.Point(77, 30);
+            this.EstudiantecomboBox.Name = "EstudiantecomboBox";
+            this.EstudiantecomboBox.Size = new System.Drawing.Size(121, 21);
+            this.EstudiantecomboBox.TabIndex = 0;
+            this.EstudiantecomboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
             // 
             // button5
             // 
@@ -190,17 +200,7 @@
             this.Buscarbutton.TabIndex = 9;
             this.Buscarbutton.UseVisualStyleBackColor = true;
             // 
-            // NuevoEstudianteButton
-            // 
-            this.NuevoEstudianteButton.Image = global::AsistenciaDetalle.Properties.Resources.icons8_más_26;
-            this.NuevoEstudianteButton.Location = new System.Drawing.Point(278, 30);
-            this.NuevoEstudianteButton.Name = "NuevoEstudianteButton";
-            this.NuevoEstudianteButton.Size = new System.Drawing.Size(69, 23);
-            this.NuevoEstudianteButton.TabIndex = 3;
-            this.NuevoEstudianteButton.UseVisualStyleBackColor = true;
-            this.NuevoEstudianteButton.Click += new System.EventHandler(this.NuevoEstudianteButton_Click);
-            // 
-            // RegistroAsistencia
+            // rAsistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -216,8 +216,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AsistenciaIdnumericUpDown);
-            this.Name = "RegistroAsistencia";
-            this.Text = "RegistroAsistencia";
+            this.Name = "rAsistencia";
+            this.Text = "rAsistencia";
             ((System.ComponentModel.ISupportInitialize)(this.AsistenciaIdnumericUpDown)).EndInit();
             this.EstudiantegroupBox.ResumeLayout(false);
             this.EstudiantegroupBox.PerformLayout();

@@ -11,9 +11,9 @@ using AsistenciaDetalle.UI.Registro;
 
 namespace AsistenciaDetalle.UI.Registro
 {
-    public partial class RegistroAsistencia : Form
+    public partial class rAsistencia : Form
     {
-        public RegistroAsistencia()
+        public rAsistencia()
         {
             InitializeComponent();
         }
@@ -25,7 +25,7 @@ namespace AsistenciaDetalle.UI.Registro
 
         private void NuevoEstudianteButton_Click(object sender, EventArgs e)
         {
-            Form registre = new RegistroEstudiantes();
+            Form registre = new rEstudiantes();
             registre.Show();
         }
     }

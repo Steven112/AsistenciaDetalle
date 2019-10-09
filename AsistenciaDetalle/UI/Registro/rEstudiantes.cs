@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AsistenciaDetalle.UI.Registro
 {
-    public partial class RegistroEstudiantes : Form
+    public partial class rEstudiantes : Form
     {
-        public RegistroEstudiantes()
+        public rEstudiantes()
         {
             InitializeComponent();
         }

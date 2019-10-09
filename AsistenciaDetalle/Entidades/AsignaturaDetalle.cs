@@ -10,10 +10,13 @@ namespace AsistenciaDetalle.Entidades
     {
         public int AsignaturaId { get; set; }
         public string Nombre { get; set; }
-        public AsignaturaDetalle()
+
+        public AsignaturaDetalle(int asignaturaId, string nombre)
         {
-            AsignaturaId = 0;
-            Nombre = string.Empty;
+            AsignaturaId = asignaturaId;
+            Nombre = nombre;
         }
+
+        
     }
 }

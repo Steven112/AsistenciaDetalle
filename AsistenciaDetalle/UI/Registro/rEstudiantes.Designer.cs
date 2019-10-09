@@ -1,6 +1,6 @@
 ﻿namespace AsistenciaDetalle.UI.Registro
 {
-    partial class RegistroEstudiantes
+    partial class rEstudiantes
     {
         /// <summary>
         /// Required designer variable.
@@ -108,7 +108,7 @@
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
-            // RegistroEstudiantes
+            // rEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,8 +121,8 @@
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "RegistroEstudiantes";
-            this.Text = "RegistroEstudiantes";
+            this.Name = "rEstudiantes";
+            this.Text = "rEstudiantes";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
