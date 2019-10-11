@@ -13,21 +13,23 @@ namespace AsistenciaDetalle.Entidades
         public int AsistenciaId { get; set; }
         public DateTime Fecha { get; set; }
         public int AsignaturaId { get; set; }
-        public virtual List<EstudiantesDetalle> Estudiante { get; set; }
         public int EstudianteId { get; set; }
-        public virtual List<AsignaturaDetalle> Asignatura { get; set; }
+        public virtual List<EstudiantesDetalle> Estudiantes { get; set; }
         public int Cantidad { get; set; }
+
         public Asistencia()
         {
-            AsistenciaId = 0;
-            Fecha = DateTime.Now;
-            Asignatura = new List<AsignaturaDetalle>();
-            Estudiante = new List<EstudiantesDetalle>();
-            AsignaturaId = 0;
-            EstudianteId = 0;
-            Cantidad = 0;
+
 
         }
-
+        public Asistencia(int asistenciaId, DateTime fecha, int asignaturaId, int estudianteId, List<EstudiantesDetalle> estudiantes, int cantidad)
+        {
+            AsistenciaId = asistenciaId;
+            Fecha = fecha;
+            AsignaturaId = asignaturaId;
+            EstudianteId = estudianteId;
+            Estudiantes = estudiantes;
+            Cantidad = cantidad;
+        }
     }
 }

@@ -41,7 +41,7 @@ namespace AsistenciaDetalle.BLL
                 var Anterior = db.Asistencias.Find(asistencia.AsistenciaId);
                 foreach(var item in Anterior.Estudiantes)
                 {
-                    if (!asistencia.Estudiantes.Exists(d => d.EstudanteId == item.EstudanteId))
+                    if (!asistencia.Estudiantes.Exists(d => d.EstudianteId == item.EstudianteId))
                         db.Entry(item).State = EntityState.Deleted;
                 }
                 db.Entry(asistencia).State = EntityState.Modified;
