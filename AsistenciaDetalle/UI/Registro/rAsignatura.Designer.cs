@@ -33,11 +33,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.NombretextBox = new System.Windows.Forms.TextBox();
+            this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +73,10 @@
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.Size = new System.Drawing.Size(170, 20);
             this.NombretextBox.TabIndex = 8;
+            // 
+            // MyerrorProvider
+            // 
+            this.MyerrorProvider.ContainerControl = this;
             // 
             // Eliminarbutton
             // 
@@ -123,10 +127,6 @@
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
-            // MyerrorProvider
-            // 
-            this.MyerrorProvider.ContainerControl = this;
-            // 
             // rAsignatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,7 +141,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.IDnumericUpDown1);
             this.Name = "rAsignatura";
-            this.Text = "rAsignatura";
+            this.Text = "Registro Asignatura";
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
             this.ResumeLayout(false);

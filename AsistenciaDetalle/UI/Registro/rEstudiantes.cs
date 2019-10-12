@@ -15,11 +15,12 @@ namespace AsistenciaDetalle.UI.Registro
 {
     public partial class rEstudiantes : Form
     {
-        GenericDetalleBLL<EstudiantesDetalle> EstudianteGeneric;
+        GenericDetalleBLL<Estudiante> EstudianteGeneric;
         rAsistencia asistencia = new rAsistencia();
+
         public rEstudiantes()
         {
-            EstudianteGeneric = new GenericDetalleBLL<EstudiantesDetalle>();
+            EstudianteGeneric = new GenericDetalleBLL<Estudiante>();
             InitializeComponent();
         }
 
@@ -42,38 +43,40 @@ namespace AsistenciaDetalle.UI.Registro
 
             return paso;
         }
-        private EstudiantesDetalle LlenaClase()
+
+        private Estudiante LlenaClase()
         {
-            EstudiantesDetalle estudiantes = new EstudiantesDetalle();
+            Estudiante estudiantes = new Estudiante();
             estudiantes.EstudianteId= Convert.ToInt32(IDnumericUpDown1.Value);
             estudiantes.Nombres = NombretextBox.Text;
 
             return estudiantes;
         }
 
-        private void LlenaCampos(EstudiantesDetalle estudiante)
+        private void LlenaCampos(Estudiante estudiante)
         {
             IDnumericUpDown1.Value = estudiante.EstudianteId;
             NombretextBox.Text = estudiante.Nombres;
         }
+
         private bool ExisteBasedeDatos()
         {
-            EstudiantesDetalle estudiantes =EstudianteGeneric.Buscar((int)IDnumericUpDown1.Value);
+            Estudiante estudiantes =EstudianteGeneric.Buscar((int)IDnumericUpDown1.Value);
 
             return (estudiantes != null);
         }
+
         private void Limpiar()
         {
             IDnumericUpDown1.Value = 0;
             NombretextBox.Text = string.Empty;
         }
 
-
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             int id;
-            EstudiantesDetalle estudiantes = new EstudiantesDetalle();
-            EstudianteGeneric = new GenericDetalleBLL<EstudiantesDetalle>();
+            Estudiante estudiantes = new Estudiante();
+            EstudianteGeneric = new GenericDetalleBLL<Estudiante>();
             id = Convert.ToInt32(IDnumericUpDown1.Value);
 
 
@@ -86,12 +89,12 @@ namespace AsistenciaDetalle.UI.Registro
                 LlenaCampos(estudiantes);
             }
             
-            asistencia.ComboBox();
+           
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            EstudiantesDetalle estudiante = new EstudiantesDetalle();
+            Estudiante estudiante = new Estudiante();
             bool paso = false;
 
             if (!Validar())
@@ -132,9 +135,6 @@ namespace AsistenciaDetalle.UI.Registro
 
             int id;
             id = Convert.ToInt32(IDnumericUpDown1.Value);
-            Contexto db = new Contexto();
-
-            EstudiantesDetalle estudiantes = new EstudiantesDetalle();
             Limpiar();
 
             if (EstudianteGeneric.Eliminar(id))

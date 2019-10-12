@@ -18,12 +18,17 @@ namespace AsistenciaDetalle.UI.Registro
     {
         public GenericDetalleBLL<EstudiantesDetalle> GenericEstudiante;
         public List<EstudiantesDetalle> DetalleEstudiante { get; set; }
-        
+        public GenericDetalleBLL<Estudiante> Estudent;
+
         public rAsistencia()
         {
+            InitializeComponent();
+            ComboBox();
             this.DetalleEstudiante = new List<EstudiantesDetalle>();
             this.GenericEstudiante = new GenericDetalleBLL<EstudiantesDetalle>();
-            InitializeComponent();
+            Estudent = new GenericDetalleBLL<Estudiante>();
+            
+            
         }
         private void CargarGrid()
         {
@@ -46,6 +51,7 @@ namespace AsistenciaDetalle.UI.Registro
             CargarGrid();
 
         }
+
         private bool Validar()
         {
             bool paso = true;
@@ -92,6 +98,7 @@ namespace AsistenciaDetalle.UI.Registro
             CantidadtextBox.Text = Convert.ToString(asistencia.Cantidad);
 
         }
+
         private int cantidad;
         private void NuevoEstudianteButton_Click(object sender, EventArgs e)
         {
@@ -101,28 +108,23 @@ namespace AsistenciaDetalle.UI.Registro
             //todo:nvalidar campos detalle
             //Agrega un nuevo detalle al datagrid
 
-            EstudiantesDetalle estudiantesDetalle = GenericEstudiante.Buscar(EstudiantecomboBox.SelectedIndex + 1);
-          
-            if (estudiantesDetalle != null)
-            {
-               
-                this.DetalleEstudiante.Add(
+            string nombres = Estudent.Buscar(id:(int) EstudiantecomboBox.SelectedIndex + 1).Nombres;
+
+            this.DetalleEstudiante.Add(
                 new EstudiantesDetalle(
 
                     estudianteId: EstudiantecomboBox.SelectedIndex,
-                    nombres: estudiantesDetalle.Nombres,
-                    asignaturaId: AsignaaturacomboBox.SelectedIndex,
+                    nombres:nombres,
+                    asignsturaId: AsignaaturacomboBox.SelectedIndex,
                     presente: PresentecheckBox.Checked
-                   
+                 
                     )
-                ) ;
-                
-            }
+            );
+
             CargarGrid();
             cantidad += 1;
             CantidadtextBox.Text = cantidad.ToString();
-            EstudiantecomboBox.SelectedIndex=0;
-            AsignaaturacomboBox.SelectedIndex = 0 ;
+           
       
         }
 
@@ -131,7 +133,6 @@ namespace AsistenciaDetalle.UI.Registro
             Asistencia asistencia = AsistenciaBLL.Buscar((int)AsistenciaIdnumericUpDown.Value);
             return (asistencia != null);
         }
-
 
         private void Removerbutton_Click(object sender, EventArgs e)
         {
@@ -163,7 +164,7 @@ namespace AsistenciaDetalle.UI.Registro
             {
                 if (ExisteEnLaBaseDeDatos())
                 {
-                    MessageBox.Show("No se puede modificar un registro que no existe", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se puede modificar un registro que no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 paso = AsistenciaBLL.Modificar(asistencia);
@@ -183,8 +184,8 @@ namespace AsistenciaDetalle.UI.Registro
         public void ComboBox()
         {
             EstudiantecomboBox.DataSource = null;
-            GenericDetalleBLL<EstudiantesDetalle> Generic = new GenericDetalleBLL<EstudiantesDetalle>();
-            List<EstudiantesDetalle> lista = Generic.GetList(p => true);
+            GenericDetalleBLL<Estudiante> Generic = new GenericDetalleBLL<Estudiante>();
+            List<Estudiante> lista = Generic.GetList(p => true);
             EstudiantecomboBox.DataSource = lista;
             EstudiantecomboBox.DisplayMember = "Nombres";
             EstudiantecomboBox.ValueMember = "EstudianteId";
@@ -199,9 +200,6 @@ namespace AsistenciaDetalle.UI.Registro
 
         }
 
-
-
-
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -213,8 +211,6 @@ namespace AsistenciaDetalle.UI.Registro
             Asistencia asistencia = new Asistencia();
             int id;
             id = Convert.ToInt32(AsistenciaIdnumericUpDown.Value);
-
-            
 
             if (AsistenciaBLL.Eliminar(id))
             {

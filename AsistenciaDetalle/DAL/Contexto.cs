@@ -13,6 +13,7 @@ namespace AsistenciaDetalle.DAL
         public DbSet<Asistencia> Asistencias { get; set; }
         public DbSet<EstudiantesDetalle> Estudiante { get; set; }
         public DbSet<Asignatura> Asignatura { get; set; }
+        public DbSet<Estudiante> Estudiant { get; set; }
 
 
         public Contexto() : base("ConStr")

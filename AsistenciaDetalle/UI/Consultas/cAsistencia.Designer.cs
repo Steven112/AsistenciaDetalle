@@ -146,7 +146,7 @@
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.DesdedateTimePicker);
             this.Name = "cAsistencia";
-            this.Text = "ConsusltaAsistencia";
+            this.Text = "Consuslta Asistencia";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

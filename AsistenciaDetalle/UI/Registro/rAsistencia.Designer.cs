@@ -37,20 +37,20 @@
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.AsignaaturacomboBox = new System.Windows.Forms.ComboBox();
             this.EstudiantegroupBox = new System.Windows.Forms.GroupBox();
-            this.AgregarEstudiantebutton = new System.Windows.Forms.Button();
-            this.Removerbutton = new System.Windows.Forms.Button();
-            this.NuevoGridEstudianteButton = new System.Windows.Forms.Button();
             this.AsistenciadataGridView = new System.Windows.Forms.DataGridView();
             this.PresentecheckBox = new System.Windows.Forms.CheckBox();
             this.EstudiantecomboBox = new System.Windows.Forms.ComboBox();
             this.AsistenciaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.CantidadtextBox = new System.Windows.Forms.TextBox();
             this.Cantidadlabel = new System.Windows.Forms.Label();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
             this.AgregarAsignaturabutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.Guardarbutton = new System.Windows.Forms.Button();
-            this.Nuevobutton = new System.Windows.Forms.Button();
-            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.AgregarEstudiantebutton = new System.Windows.Forms.Button();
+            this.Removerbutton = new System.Windows.Forms.Button();
+            this.NuevoGridEstudianteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AsistenciaIdnumericUpDown)).BeginInit();
             this.EstudiantegroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AsistenciadataGridView)).BeginInit();
@@ -121,39 +121,6 @@
             this.EstudiantegroupBox.TabStop = false;
             this.EstudiantegroupBox.Text = "Estudiantes";
             // 
-            // AgregarEstudiantebutton
-            // 
-            this.AgregarEstudiantebutton.Image = ((System.Drawing.Image)(resources.GetObject("AgregarEstudiantebutton.Image")));
-            this.AgregarEstudiantebutton.Location = new System.Drawing.Point(175, 30);
-            this.AgregarEstudiantebutton.Name = "AgregarEstudiantebutton";
-            this.AgregarEstudiantebutton.Size = new System.Drawing.Size(41, 23);
-            this.AgregarEstudiantebutton.TabIndex = 18;
-            this.AgregarEstudiantebutton.UseVisualStyleBackColor = true;
-            this.AgregarEstudiantebutton.Click += new System.EventHandler(this.AgregarEstudiantebutton_Click);
-            // 
-            // Removerbutton
-            // 
-            this.Removerbutton.Image = global::AsistenciaDetalle.Properties.Resources._5555555;
-            this.Removerbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Removerbutton.Location = new System.Drawing.Point(6, 187);
-            this.Removerbutton.Name = "Removerbutton";
-            this.Removerbutton.Size = new System.Drawing.Size(103, 20);
-            this.Removerbutton.TabIndex = 17;
-            this.Removerbutton.Text = "Remover Fila";
-            this.Removerbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Removerbutton.UseVisualStyleBackColor = true;
-            this.Removerbutton.Click += new System.EventHandler(this.Removerbutton_Click);
-            // 
-            // NuevoGridEstudianteButton
-            // 
-            this.NuevoGridEstudianteButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoGridEstudianteButton.Image")));
-            this.NuevoGridEstudianteButton.Location = new System.Drawing.Point(306, 30);
-            this.NuevoGridEstudianteButton.Name = "NuevoGridEstudianteButton";
-            this.NuevoGridEstudianteButton.Size = new System.Drawing.Size(41, 23);
-            this.NuevoGridEstudianteButton.TabIndex = 3;
-            this.NuevoGridEstudianteButton.UseVisualStyleBackColor = true;
-            this.NuevoGridEstudianteButton.Click += new System.EventHandler(this.NuevoEstudianteButton_Click);
-            // 
             // AsistenciadataGridView
             // 
             this.AsistenciadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -201,6 +168,42 @@
             this.Cantidadlabel.TabIndex = 15;
             this.Cantidadlabel.Text = "Cantidad:";
             // 
+            // Eliminarbutton
+            // 
+            this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
+            this.Eliminarbutton.Location = new System.Drawing.Point(228, 319);
+            this.Eliminarbutton.Name = "Eliminarbutton";
+            this.Eliminarbutton.Size = new System.Drawing.Size(57, 58);
+            this.Eliminarbutton.TabIndex = 18;
+            this.Eliminarbutton.Text = "Eliminar";
+            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
+            // 
+            // Nuevobutton
+            // 
+            this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
+            this.Nuevobutton.Location = new System.Drawing.Point(102, 319);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(57, 58);
+            this.Nuevobutton.TabIndex = 17;
+            this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
+            // 
+            // Guardarbutton
+            // 
+            this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
+            this.Guardarbutton.Location = new System.Drawing.Point(165, 319);
+            this.Guardarbutton.Name = "Guardarbutton";
+            this.Guardarbutton.Size = new System.Drawing.Size(57, 58);
+            this.Guardarbutton.TabIndex = 16;
+            this.Guardarbutton.Text = "Guardar";
+            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
+            // 
             // AgregarAsignaturabutton
             // 
             this.AgregarAsignaturabutton.Image = ((System.Drawing.Image)(resources.GetObject("AgregarAsignaturabutton.Image")));
@@ -221,41 +224,38 @@
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
-            // Guardarbutton
+            // AgregarEstudiantebutton
             // 
-            this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
-            this.Guardarbutton.Location = new System.Drawing.Point(165, 319);
-            this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(57, 58);
-            this.Guardarbutton.TabIndex = 16;
-            this.Guardarbutton.Text = "Guardar";
-            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Guardarbutton.UseVisualStyleBackColor = true;
-            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
+            this.AgregarEstudiantebutton.Image = ((System.Drawing.Image)(resources.GetObject("AgregarEstudiantebutton.Image")));
+            this.AgregarEstudiantebutton.Location = new System.Drawing.Point(175, 30);
+            this.AgregarEstudiantebutton.Name = "AgregarEstudiantebutton";
+            this.AgregarEstudiantebutton.Size = new System.Drawing.Size(41, 23);
+            this.AgregarEstudiantebutton.TabIndex = 18;
+            this.AgregarEstudiantebutton.UseVisualStyleBackColor = true;
+            this.AgregarEstudiantebutton.Click += new System.EventHandler(this.AgregarEstudiantebutton_Click);
             // 
-            // Nuevobutton
+            // Removerbutton
             // 
-            this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
-            this.Nuevobutton.Location = new System.Drawing.Point(102, 319);
-            this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(57, 58);
-            this.Nuevobutton.TabIndex = 17;
-            this.Nuevobutton.Text = "Nuevo";
-            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Nuevobutton.UseVisualStyleBackColor = true;
-            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
+            this.Removerbutton.Image = global::AsistenciaDetalle.Properties.Resources._5555555;
+            this.Removerbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Removerbutton.Location = new System.Drawing.Point(6, 187);
+            this.Removerbutton.Name = "Removerbutton";
+            this.Removerbutton.Size = new System.Drawing.Size(103, 20);
+            this.Removerbutton.TabIndex = 17;
+            this.Removerbutton.Text = "Remover Fila";
+            this.Removerbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Removerbutton.UseVisualStyleBackColor = true;
+            this.Removerbutton.Click += new System.EventHandler(this.Removerbutton_Click);
             // 
-            // Eliminarbutton
+            // NuevoGridEstudianteButton
             // 
-            this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
-            this.Eliminarbutton.Location = new System.Drawing.Point(228, 319);
-            this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(57, 58);
-            this.Eliminarbutton.TabIndex = 18;
-            this.Eliminarbutton.Text = "Eliminar";
-            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Eliminarbutton.UseVisualStyleBackColor = true;
-            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
+            this.NuevoGridEstudianteButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoGridEstudianteButton.Image")));
+            this.NuevoGridEstudianteButton.Location = new System.Drawing.Point(306, 30);
+            this.NuevoGridEstudianteButton.Name = "NuevoGridEstudianteButton";
+            this.NuevoGridEstudianteButton.Size = new System.Drawing.Size(41, 23);
+            this.NuevoGridEstudianteButton.TabIndex = 3;
+            this.NuevoGridEstudianteButton.UseVisualStyleBackColor = true;
+            this.NuevoGridEstudianteButton.Click += new System.EventHandler(this.NuevoEstudianteButton_Click);
             // 
             // rAsistencia
             // 
@@ -277,7 +277,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AsistenciaIdnumericUpDown);
             this.Name = "rAsistencia";
-            this.Text = "rAsistencia";
+            this.Text = "Registro Asistencia";
             this.Load += new System.EventHandler(this.RAsistencia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AsistenciaIdnumericUpDown)).EndInit();
             this.EstudiantegroupBox.ResumeLayout(false);

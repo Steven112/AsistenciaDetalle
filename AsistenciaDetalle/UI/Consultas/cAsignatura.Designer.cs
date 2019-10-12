@@ -75,6 +75,7 @@
             // 
             // Consultabutton
             // 
+            this.Consultabutton.Image = global::AsistenciaDetalle.Properties.Resources.icons8_borrar_búsqueda_24;
             this.Consultabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Consultabutton.Location = new System.Drawing.Point(293, 24);
             this.Consultabutton.Name = "Consultabutton";
@@ -105,7 +106,7 @@
             this.Controls.Add(this.Consultabutton);
             this.Controls.Add(this.ConsultadataGridView);
             this.Name = "cAsignatura";
-            this.Text = "cAsignatura";
+            this.Text = "Cosulta Asignatura";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

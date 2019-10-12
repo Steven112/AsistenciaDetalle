@@ -89,7 +89,8 @@ namespace AsistenciaDetalle.BLL
             {
                 
                 asistencia = db.Asistencias.Find(id);
-                asistencia.Estudiantes.Count();
+                if (asistencia != null)
+                    asistencia.Estudiantes.Count();
             }
             catch (Exception)
             {

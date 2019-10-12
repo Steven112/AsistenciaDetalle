@@ -15,12 +15,18 @@ namespace AsistenciaDetalle.Entidades
         public int AsignaturaId { get; set; }
         public bool Presente { get; set; }
 
-        public EstudiantesDetalle(int estudianteId, string nombres, int asignaturaId, bool presente)
+        public EstudiantesDetalle(int estudianteId, string nombres)
         {
             EstudianteId = estudianteId;
             Nombres = nombres;
-            AsignaturaId = asignaturaId;
+            
+        }
+
+        public EstudiantesDetalle(int estudianteId, string nombres, int asignsturaId, bool presente) : this(estudianteId, nombres)
+        {
+            AsignaturaId = asignsturaId;
             Presente = presente;
+           
         }
 
         public EstudiantesDetalle()
