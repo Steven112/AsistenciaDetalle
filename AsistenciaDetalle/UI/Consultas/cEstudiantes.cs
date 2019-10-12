@@ -23,9 +23,9 @@ namespace AsistenciaDetalle.UI.Consultas
         private void Consultabutton_Click(object sender, EventArgs e)
         {
 
-            GenericDetalleBLL<EstudiantesDetalle> genericDetalleBLL = new GenericDetalleBLL<EstudiantesDetalle>();
-            var listado = new List<EstudiantesDetalle>();
-            Expression<Func<EstudiantesDetalle, bool>> filtro = a => true;
+            GenericDetalleBLL<Estudiante> genericDetalleBLL = new GenericDetalleBLL<Estudiante>();
+            var listado = new List<Estudiante>();
+            Expression<Func<Estudiante, bool>> filtro = a => true;
             if (CriteriotextBox.Text.Trim().Length > 0)
             {
                 switch (FiltrocomboBox.SelectedItem)
