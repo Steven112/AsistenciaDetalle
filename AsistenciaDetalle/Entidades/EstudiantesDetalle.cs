@@ -12,12 +12,14 @@ namespace AsistenciaDetalle.Entidades
         [Key]
         public int EstudianteId { get; set; }
         public string Nombres { get; set; }
+        public int AsignaturaId { get; set; }
         public bool Presente { get; set; }
 
-        public EstudiantesDetalle(int estudianteId, string nombres, bool presente)
+        public EstudiantesDetalle(int estudianteId, string nombres, int asignaturaId, bool presente)
         {
             EstudianteId = estudianteId;
             Nombres = nombres;
+            AsignaturaId = asignaturaId;
             Presente = presente;
         }
 

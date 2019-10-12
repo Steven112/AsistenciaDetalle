@@ -86,7 +86,7 @@ namespace AsistenciaDetalle.UI.Registro
                 LlenaCampos(estudiantes);
             }
             
-            asistencia.LlenarComboBox();
+            asistencia.ComboBox();
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
@@ -122,7 +122,7 @@ namespace AsistenciaDetalle.UI.Registro
                 MessageBox.Show("No se pudo guardar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            asistencia.LlenarComboBox();
+            asistencia.ComboBox();
 
         }
 
@@ -146,7 +146,7 @@ namespace AsistenciaDetalle.UI.Registro
             {
                 MyerrorProvider.SetError(IDnumericUpDown1, "No se puede eliminar el estudiante");
             }
-            asistencia.LlenarComboBox();
+            asistencia.ComboBox();
         }
     }
 }

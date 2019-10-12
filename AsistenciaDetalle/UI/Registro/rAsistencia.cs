@@ -16,19 +16,20 @@ namespace AsistenciaDetalle.UI.Registro
 {
     public partial class rAsistencia : Form
     {
-        public List<EstudiantesDetalle> DetalleEstudiante { get; set; }
         public GenericDetalleBLL<EstudiantesDetalle> GenericEstudiante;
-        private int cantidad;
+        public List<EstudiantesDetalle> DetalleEstudiante { get; set; }
+        
         public rAsistencia()
         {
-            InitializeComponent();
             this.DetalleEstudiante = new List<EstudiantesDetalle>();
             this.GenericEstudiante = new GenericDetalleBLL<EstudiantesDetalle>();
+            InitializeComponent();
         }
         private void CargarGrid()
         {
             AsistenciadataGridView.DataSource = null;
             AsistenciadataGridView.DataSource = this.DetalleEstudiante;
+            //AsistenciadataGridView.DataSource = this.AsignaaturacomboBox.SelectedIndex;
         }
 
         private void Limpiar()
@@ -37,8 +38,8 @@ namespace AsistenciaDetalle.UI.Registro
 
             AsistenciaIdnumericUpDown.Value = 0;
             FechadateTimePicker.Value = DateTime.Now;
-            AsignaaturacomboBox.SelectedIndex = 0;
-            EstudiantecomboBox.SelectedIndex = 0;
+            AsignaaturacomboBox.SelectedIndex = -1;
+            EstudiantecomboBox.SelectedIndex = -1;
             PresentecheckBox.Checked = false;
             CantidadtextBox.Text = "0";
             this.DetalleEstudiante = new List<EstudiantesDetalle>();
@@ -91,31 +92,37 @@ namespace AsistenciaDetalle.UI.Registro
             CantidadtextBox.Text = Convert.ToString(asistencia.Cantidad);
 
         }
-
+        private int cantidad;
         private void NuevoEstudianteButton_Click(object sender, EventArgs e)
         {
             if (AsistenciadataGridView.DataSource != null)
                 this.DetalleEstudiante = (List<EstudiantesDetalle>)AsistenciadataGridView.DataSource;
+
             //todo:nvalidar campos detalle
             //Agrega un nuevo detalle al datagrid
 
             EstudiantesDetalle estudiantesDetalle = GenericEstudiante.Buscar(EstudiantecomboBox.SelectedIndex + 1);
+          
             if (estudiantesDetalle != null)
             {
+               
                 this.DetalleEstudiante.Add(
                 new EstudiantesDetalle(
+
                     estudianteId: EstudiantecomboBox.SelectedIndex,
                     nombres: estudiantesDetalle.Nombres,
+                    asignaturaId: AsignaaturacomboBox.SelectedIndex,
                     presente: PresentecheckBox.Checked
+                   
                     )
                 ) ;
+                
             }
-
-
             CargarGrid();
             cantidad += 1;
             CantidadtextBox.Text = cantidad.ToString();
-            EstudiantecomboBox.SelectedIndex=AsignaaturacomboBox.SelectedIndex=-1;
+            EstudiantecomboBox.SelectedIndex=0;
+            AsignaaturacomboBox.SelectedIndex = 0 ;
       
         }
 
@@ -173,7 +180,7 @@ namespace AsistenciaDetalle.UI.Registro
             }
         }
 
-        public void LlenarComboBox()
+        public void ComboBox()
         {
             EstudiantecomboBox.DataSource = null;
             GenericDetalleBLL<EstudiantesDetalle> Generic = new GenericDetalleBLL<EstudiantesDetalle>();
@@ -181,6 +188,7 @@ namespace AsistenciaDetalle.UI.Registro
             EstudiantecomboBox.DataSource = lista;
             EstudiantecomboBox.DisplayMember = "Nombres";
             EstudiantecomboBox.ValueMember = "EstudianteId";
+
             AsignaaturacomboBox.DataSource = null;
             GenericDetalleBLL<Asignatura> GenericAsignaturas = new GenericDetalleBLL<Asignatura>();
             List<Asignatura> listaAsig = new List<Asignatura>();
@@ -221,25 +229,29 @@ namespace AsistenciaDetalle.UI.Registro
 
         private void AgregarAsignaturabutton_Click(object sender, EventArgs e)
         {
-            Form Asignatura = new rEstudiantes();
-            Asignatura.ShowDialog();
+            Form Asignatura = new rAsignatura();
+            Asignatura.Show();
         }
 
         private void AgregarEstudiantebutton_Click(object sender, EventArgs e)
         {
             Form registre = new rEstudiantes();
-            registre.ShowDialog();
+            registre.Show();
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             int id;
             Asistencia asistencia = new Asistencia();
+            
             id = Convert.ToInt32(AsistenciaIdnumericUpDown.Value);
 
             Limpiar();
-            asistencia = AsistenciaBLL.Buscar(id);
-           
+            
+            if (id > 0)
+            {
+                asistencia = AsistenciaBLL.Buscar(id);
+            }
 
             if (asistencia != null)
             {
@@ -250,7 +262,7 @@ namespace AsistenciaDetalle.UI.Registro
 
         private void RAsistencia_Load(object sender, EventArgs e)
         {
-            LlenarComboBox();
+            ComboBox();
         }
     }
 }

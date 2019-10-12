@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AsistenciaDetalle.UI.Registro;
+using AsistenciaDetalle.UI.Consultas;
 
 namespace AsistenciaDetalle
 {
@@ -34,6 +35,25 @@ namespace AsistenciaDetalle
         private void RegistroAsignaturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form registre = new rAsignatura();
+            registre.Show();
+        }
+
+        private void ConsultaAsistenciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form registre = new cAsistencia();
+            registre.Show();
+
+        }
+
+        private void ConsultaEstudianteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form registre = new cEstudiantes();
+            registre.Show();
+        }
+
+        private void ConsultaAsignaturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form registre = new cAsignatura();
             registre.Show();
         }
     }
